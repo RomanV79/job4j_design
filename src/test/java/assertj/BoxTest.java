@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.*;
 class BoxTest {
 
     @Test
-    void isThisSphere(){
-        Box box = new Box(0,10);
+    void isThisSphere() {
+        Box box = new Box(0, 10);
         String name = box.whatsThis();
         assertThat(name).isEqualTo("Sphere");
     }
@@ -16,20 +16,20 @@ class BoxTest {
     @Test
     void isNotTriangle() {
         Box box = new Box(2, 2);
-        String name  = box.whatsThis();
+        String name = box.whatsThis();
         assertThat(name).isNotEqualTo("Triangle");
     }
 
     @Test
     void hasFourVertices() {
-        Box box = new Box(4,3);
+        Box box = new Box(4, 3);
         int vertexQnt = box.getNumberOfVertices();
         assertThat(vertexQnt).isEqualTo(4);
     }
 
     @Test
     void hasNotThreeVertices() {
-        Box box = new Box(5,3);
+        Box box = new Box(5, 3);
         int vertexQnt = box.getNumberOfVertices();
         assertThat(vertexQnt).isNotEqualTo(3);
     }
@@ -43,7 +43,7 @@ class BoxTest {
 
     @Test
     void isObjectNotExist() {
-        Box box = new Box(2,2);
+        Box box = new Box(2, 2);
         boolean exist = box.isExist();
         assertThat(exist).isFalse();
     }
