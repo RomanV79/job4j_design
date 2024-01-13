@@ -37,4 +37,13 @@ class NameLoadTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("a value");
     }
+
+    @Test
+    void checkEmptyNames() {
+        NameLoad nameLoad = new NameLoad();
+        assertThatThrownBy(nameLoad::parse)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("is empty");
+    }
+
 }
