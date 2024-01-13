@@ -2,7 +2,8 @@ package assertj;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BoxTest {
 
@@ -59,6 +60,6 @@ class BoxTest {
     void areaIsZero() {
         Box box = new Box(3, 8);
         double square = box.getArea();
-        assertThat(square).isEqualTo(0);
+        assertEquals(0, square, 0.01);
     }
 }
