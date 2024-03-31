@@ -17,16 +17,16 @@ public class SimpleArrayList<T> implements SimpleList<T> {
         if (container.length == size) {
             increaseContainer();
         }
-        container[size] = value;
-        size++;
+        container[size++] = value;
         modCount++;
     }
 
     @Override
     public T set(int index, T newValue) {
         Objects.checkIndex(index, size);
+        T oldValue = container[index];
         container[index] = newValue;
-        return newValue;
+        return oldValue;
     }
 
     @Override
@@ -68,9 +68,6 @@ public class SimpleArrayList<T> implements SimpleList<T> {
             public T next() {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
-                }
-                if (expectedModCount != modCount) {
-                    throw new ConcurrentModificationException();
                 }
                 return container[currentIndex++];
             }
